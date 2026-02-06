@@ -1,4 +1,4 @@
-<img width="1427" height="119" alt="banner_img" src="https://github.com/user-attachments/assets/3b935383-f76e-43ab-a4f7-f79060b69a32" />
+<img width="1427" height="119" alt="banner_img" src="https://github.com/user-attachments/assets/00fdccfb-062e-492a-aefa-67e7bf73bb91" />
 
 # Monitor de Livestreams
 
@@ -93,6 +93,6 @@ Para instruções detalhadas de instalação, configuração e execução do amb
 **Cargo**: Project Architect  
 **Organização**: Hexenkult – Coletivo de Desenvolvimento e Soluções Tecnológicas
 
-<img width="1424" height="764" alt="panel_img" src="https://github.com/user-attachments/assets/e23be801-ed08-435d-acd3-660bf3f90b9d" />
-<img width="1414" height="329" alt="radar_img" src="https://github.com/user-attachments/assets/d67b0ab7-0a57-486d-9609-bbaba8d39e26" />
-<img width="896" height="181" alt="credits_img" src="https://github.com/user-attachments/assets/51a97792-5097-4176-89c4-11b1469d4041" />
+<img width="1424" height="764" alt="panel_img" src="https://github.com/user-attachments/assets/738320c3-bc19-4561-9374-19611ae7f4e6" />
+<img width="1414" height="329" alt="radar_img" src="https://github.com/user-attachments/assets/0666d583-c1ca-4e7a-abc9-87f244934359" />
+<img width="896" height="181" alt="credits_img" src="https://github.com/user-attachments/assets/314760b4-3e83-4412-a2e7-ecfd2b5e92a5" />
