@@ -1,0 +1,141 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-4a5b-8c9d-0e1f2a3b4c5d",
+		"name": "Monitor de Livestreams API",
+		"description": "Collection técnica para validação dos fluxos PubSubHubbub do ecossistema Hexenkult.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Channels",
+			"item": [
+				{
+					"name": "Buscar Canais por Nome",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/channels/search?query=gaules",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "channels", "search"],
+							"query": [
+								{
+									"key": "query",
+									"value": "gaules"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Confirmar Handshake (Subscrição)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/channels/confirm/:channelId?callback={{ngrok_url}}",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "channels", "confirm", ":channelId"],
+							"query": [
+								{
+									"key": "callback",
+									"value": "{{ngrok_url}}",
+									"description": "URL base do Ngrok para o hub do Google enviar o callback"
+								}
+							],
+							"variable": [
+								{
+									"key": "channelId",
+									"value": "UCd1y-FSzUvDxx7UP_j72mXQ"
+								}
+							]
+						}
+					}
+				},
+				{
+					"name": "Listar Todos os Canais",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/channels",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "channels"]
+						}
+					}
+				},
+				{
+					"name": "Remover Canal (Unsubscribe)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/channels/:id",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "channels", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					}
+				}
+			]
+		},
+		{
+			"name": "Notifications (Simulation)",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/notifications/health",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "notifications", "health"]
+						}
+					}
+				},
+				{
+					"name": "Simular Desafio do Google (GET Handshake)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/v1/notifications?hub.mode=subscribe&hub.topic=https://www.youtube.com/xml/feeds/videos.xml?channel_id=UCtest&hub.challenge=hexenkult_challenge_test&hub.lease_seconds=432000",
+							"host": ["{{base_url}}"],
+							"path": ["api", "v1", "notifications"],
+							"query": [
+								{ "key": "hub.mode", "value": "subscribe" },
+								{ "key": "hub.topic", "value": "https://www.youtube.com/xml/feeds/videos.xml?channel_id=UCtest" },
+								{ "key": "hub.challenge", "value": "hexenkult_challenge_test" },
+								{ "key": "hub.lease_seconds", "value": "432000" }
+							]
+						}
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": { "type": "text/javascript", "exec": [""] }
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "ngrok_url",
+			"value": "https://sua-url.ngrok-free.app",
+			"type": "string"
+		}
+	]
+}

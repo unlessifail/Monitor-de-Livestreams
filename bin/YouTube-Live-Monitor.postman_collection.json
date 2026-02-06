@@ -1,0 +1,176 @@
+{
+  "info": {
+    "name": "YouTube Live Monitor API",
+    "description": "Collection para testar o microserviço de monitoramento de lives",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Channels",
+      "item": [
+        {
+          "name": "Buscar Canais por Nome",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/search?query=gaules",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "search"],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "gaules",
+                  "description": "Nome do canal ou link"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Buscar Canal por Link",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/search?query=youtube.com/@casimito",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "search"],
+              "query": [
+                {
+                  "key": "query",
+                  "value": "youtube.com/@casimito"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Confirmar e Adicionar Canal",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/confirm/UCd1y-FSzUvDxx7UP_j72mXQ",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "confirm", "UCd1y-FSzUvDxx7UP_j72mXQ"]
+            }
+          }
+        },
+        {
+          "name": "Listar Todos os Canais",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels"]
+            }
+          }
+        },
+        {
+          "name": "Listar Canais Ativos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/active",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "active"]
+            }
+          }
+        },
+        {
+          "name": "Buscar Canal por ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/UCd1y-FSzUvDxx7UP_j72mXQ",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "UCd1y-FSzUvDxx7UP_j72mXQ"]
+            }
+          }
+        },
+        {
+          "name": "Remover Canal",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/channels/UCd1y-FSzUvDxx7UP_j72mXQ",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "channels", "UCd1y-FSzUvDxx7UP_j72mXQ"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/notifications/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "notifications", "health"]
+            }
+          }
+        },
+        {
+          "name": "Verificação de Callback (Simulação)",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/notifications?hub.mode=subscribe&hub.topic=https://www.youtube.com/xml/feeds/videos.xml?channel_id=UCtest&hub.challenge=test123&hub.lease_seconds=432000",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "v1", "notifications"],
+              "query": [
+                {
+                  "key": "hub.mode",
+                  "value": "subscribe"
+                },
+                {
+                  "key": "hub.topic",
+                  "value": "https://www.youtube.com/xml/feeds/videos.xml?channel_id=UCtest"
+                },
+                {
+                  "key": "hub.challenge",
+                  "value": "test123"
+                },
+                {
+                  "key": "hub.lease_seconds",
+                  "value": "432000"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
